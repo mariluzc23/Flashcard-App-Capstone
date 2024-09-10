@@ -39,12 +39,13 @@ npm install
 ```
 
 4. Start the application:
-```basth
+```bash
 npm start
 ```
 
 5. To run the tests:
-```npm test
+``` bash 
+npm test
 ```
 
 ## Screens
