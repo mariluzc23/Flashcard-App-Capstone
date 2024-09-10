@@ -84,18 +84,18 @@ function Deck() {
                 <h3>{deck.name}</h3>
                 <p>{deck.description}</p>
                 <div className="row justify-content-center justify-content-md-start">
-                    <div className="btn-group px-4">
-                        <Link to={`/decks/${deckId}/edit`}className="btn btn-secondary mx-2">Edit</Link>
-                        <Link to={`/decks/${deckId}/study`}className="btn btn-primary mx-2">Study</Link>
-                        <Link to={`/decks/${deckId}/cards/new`}className="btn btn-primary mx-2">Add Cards</Link>
-                        <button onClick={handleDeleteDeck} className="btn btn-danger mx-2">Delete</button>
+                    <div className="btn-toolbar px-4">
+                        <Link to={`/decks/${deckId}/edit`}className="btn btn-warning mx-1">Edit</Link>
+                        <Link to={`/decks/${deckId}/study`}className="btn btn-success mx-1">Study</Link>
+                        <Link to={`/decks/${deckId}/cards/new`}className="btn btn-primary mx-1">Add Cards</Link>
+                        <button onClick={handleDeleteDeck} className="btn btn-danger mx-1">Delete</button>
                     </div>
                 </div>
                 <br/>
                 <h2 className="text-center text-md-left">Cards</h2>
                 <br/>
                 {cards.map((card, index) => (
-                    <div className="card" key={index}>
+                    <div className="card mb-4" key={index}>
                         <div className="card-body">
                             <div className="container">
                                 <div className="row justify-content-start">
@@ -104,7 +104,7 @@ function Deck() {
                                 </div>
                                 <div className="row">
                                     <div className="mt-5 col-9">
-                                        <Link to={`/decks/${deckId}/cards/${card.id}/edit`} className="btn btn-secondary">Edit</Link> &nbsp;
+                                        <Link to={`/decks/${deckId}/cards/${card.id}/edit`} className="btn btn-warning">Edit</Link> &nbsp;
                                         <button onClick={handleDeleteCard} value={card.id} className="btn btn-danger">Delete</button>
                                     </div>
                                 </div>

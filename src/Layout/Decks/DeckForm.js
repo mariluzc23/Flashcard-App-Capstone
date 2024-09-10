@@ -34,8 +34,8 @@ const DeckForm = ({handleSubmit, handleChange, name, description}) => {
                 />
                 <br/>      
             </div>
-            <Link to={'/'} className="btn btn-secondary m-4">Cancel</Link>
-            <button type="submit" className="btn btn-primary m-4">Submit</button>
+            <Link to={'/'} className="btn btn-danger m-2">Cancel</Link>
+            <button type="submit" className="btn btn-primary m-2">Submit</button>
         </form>
     )
 };

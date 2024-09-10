@@ -48,7 +48,7 @@ function Study() {
              }
         }
     }
-    if (cards.length > 2) {
+    if (cards.length > 1) {
         return (
             <div>
                 <nav aria-label="breadcrumb">
@@ -64,8 +64,8 @@ function Study() {
                         <div className="row">
                             <h3 className="card-title">Card {cardNum + 1} of {cards.length}</h3>
                             <div className="card-text col-6">{(facing) ? `${cards[cardNum].front}` : `${cards[cardNum].back}`}</div>
-                            <div className="btn-group justify-content-end">
-                                <button className="btn btn-secondary mx-2" onClick={handleCardFlip}>Flip</button>
+                            <div className="btn-toolbar justify-content-end">
+                                <button className="btn btn-warning mx-2" onClick={handleCardFlip}>Flip</button>
                                 {(facing) ? " " : <button className="btn btn-primary" onClick={cardOrder}>Next</button>}
                             </div>
                         </div>

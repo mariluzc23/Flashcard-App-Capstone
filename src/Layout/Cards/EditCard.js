@@ -60,8 +60,8 @@ function EditCard() {
             </nav>
             <form className="form col-12" onSubmit={handleSubmit}>
                 <CardForm formData={card} handleChange={handleChange}/>
-                <Link to="/" className="btn btn-secondary">Cancel</Link>
-                <button type="submit" className="btn btn-primary m-4">Submit</button>
+                <Link to="/" className="btn btn-danger">Cancel</Link>
+                <button type="submit" className="btn btn-primary m-2">Submit</button>
             </form>
         </div>
     )

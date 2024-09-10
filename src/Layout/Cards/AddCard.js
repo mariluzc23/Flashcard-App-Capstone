@@ -78,7 +78,7 @@ function AddCard() {
         <form className="form col-12" onSubmit={handleSave}>
             <CardForm formData={formData} handleChange={handleChange}/>
             <button type="button" className="btn btn-primary mx-2" onClick={handleSave}>Save</button>
-            <button type="button" className="btn btn-secondary mx-2" onClick={handleSubmit}>Done</button>
+            <button type="button" className="btn btn-warning mx-2" onClick={handleSubmit}>Done</button>
         </form>
         </div>
     );

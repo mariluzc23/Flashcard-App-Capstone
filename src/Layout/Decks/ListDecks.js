@@ -47,7 +47,7 @@ function ListDecks() {
         return (
             <div key="35">
                 {decks.map((deck) => (
-                    <div className="card" key={deck.id}>
+                    <div className="card mb-4" key={deck.id}>
                         <div className="container">
                             <div className="card-header row">
                                 <div className="col-10">
@@ -62,10 +62,10 @@ function ListDecks() {
                             <p className="card-text">{deck.description}</p>
                             <div>
                             <div className="container">
-                                <div className="btn-group align-center d-md-block">
-                                    <Link to={`decks/${deck.id}`} className="btn btn-secondary mx-2" key="11">View</Link>
-                                    <Link to={`decks/${deck.id}/study`} className="btn btn-primary mx-2" key="12">Study</Link>
-                                    <button className="btn btn-danger mx-2" value={deck.id} onClick={handleDeleteDecks} key="13">Delete</button>
+                                <div className="btn-toolbar align-center d-md-block">
+                                    <Link to={`decks/${deck.id}`} className="btn btn-primary mx-1" key="11">View</Link>
+                                    <Link to={`decks/${deck.id}/study`} className="btn btn-success mx-1" key="12">Study</Link>
+                                    <button className="btn btn-danger mx-1" value={deck.id} onClick={handleDeleteDecks} key="13">Delete</button>
                                 </div>
                             </div>
                             </div>
