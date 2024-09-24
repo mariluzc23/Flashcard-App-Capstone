@@ -48,6 +48,9 @@ function Study() {
              }
         }
     }
+    //Calculates percentage for progress bar
+    const progressPercentage = ((cardNum + 1) / cards.length) * 100;
+
     if (cards.length > 1) {
         return (
             <div>
@@ -59,12 +62,23 @@ function Study() {
                     </ol>
                 </nav>
                 <h2 className="my-4">Study: {deck.name}</h2>
+                <div className="progress mb-3">
+                    <div 
+                        className="progress-bar progress-bar-striped" 
+                        role="progressbar" 
+                        style={{ width: `${progressPercentage}%` }} 
+                        aria-valuenow={progressPercentage} 
+                        aria-valuemin="0" 
+                        aria-valuemax="100">
+                        {Math.round(progressPercentage)}%
+                    </div>
+                </div>
+                <h6 className="justify-content-end">Card {cardNum + 1} of {cards.length}</h6>
                 <div className="d-flex card">
                     <div className="card-body justify-content-between">
                         <div className="row">
-                            <h3 className="card-title">Card {cardNum + 1} of {cards.length}</h3>
                             <div className="card-text col-6">{(facing) ? `${cards[cardNum].front}` : `${cards[cardNum].back}`}</div>
-                            <div className="btn-toolbar justify-content-end">
+                            <div className="justify-content-end">
                                 <button className="btn btn-warning mx-2" onClick={handleCardFlip}>Flip</button>
                                 {(facing) ? " " : <button className="btn btn-primary" onClick={cardOrder}>Next</button>}
                             </div>
