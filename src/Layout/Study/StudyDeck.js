@@ -62,7 +62,7 @@ function Study() {
                     </ol>
                 </nav>
                 <h2 className="my-4">Study: {deck.name}</h2>
-                <div className="progress mb-3">
+                <div className="progress mb-1">
                     <div 
                         className="progress-bar progress-bar-striped" 
                         role="progressbar" 
@@ -73,19 +73,26 @@ function Study() {
                         {Math.round(progressPercentage)}%
                     </div>
                 </div>
-                <h6 className="justify-content-end">Card {cardNum + 1} of {cards.length}</h6>
-                <div className="d-flex card">
-                    <div className="card-body justify-content-between">
-                        <div className="row">
-                            <div className="card-text col-6">{(facing) ? `${cards[cardNum].front}` : `${cards[cardNum].back}`}</div>
-                            <div className="justify-content-end">
-                                <button className="btn btn-warning mx-2" onClick={handleCardFlip}>Flip</button>
-                                {(facing) ? " " : <button className="btn btn-primary" onClick={cardOrder}>Next</button>}
-                            </div>
+                <h6 className="text-end">Card {cardNum + 1} of {cards.length}</h6>
+              {/* Card with buttons at the bottom */}
+              <div className="card">
+                    <div className="card-body d-flex flex-column justify-content-between" style={{ minHeight: '150px' }}>
+                        {/* Card Content */}
+                        <div className="mb-3">
+                            <p className="card-text">
+                                {facing ? cards[cardNum].front : cards[cardNum].back}
+                            </p>
+                        </div>
+                        
+                        {/* Buttons at the bottom */}
+                        <div className="d-flex justify-content-center">
+                            <button className="btn btn-warning mx-2" onClick={handleCardFlip}>Flip</button>
+                            {!facing && <button className="btn btn-primary" onClick={cardOrder}>Next</button>}
+                        </div>
                         </div>
                     </div>
                 </div>
-            </div>
+          
         );
     } else {
         return (
